@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ProductSortingTest extends BeforeAll {
 
-    @Test(priority = 4)
+    @Test(priority = 1)
     public void sortLowToHigh() throws IOException {
 
         LogInFun.logInValidAccount(driver, wait);
