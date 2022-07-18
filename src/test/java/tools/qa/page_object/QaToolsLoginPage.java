@@ -1,6 +1,9 @@
 package tools.qa.page_object;
 import org.openqa.selenium.By;
+import swag.lab.test.utility.jsonFilesParser.JSONManagement;
 import tools.qa.BaseClass;
+
+import java.io.IOException;
 
 public class QaToolsLoginPage extends BaseClass {
 
@@ -8,13 +11,13 @@ public class QaToolsLoginPage extends BaseClass {
     By password = By.id("password");
     By logInButton = By.id("login");
 
-    public void typeUsername (){
-        driver.findElement(userName).sendKeys("testthebest");
+    public void typeUsername () throws IOException {
+        driver.findElement(userName).sendKeys(JSONManagement.readProperty("standardUser"));
     }
 
-    public void typePassword () {
+    public void typePassword () throws IOException {
 
-       driver.findElement(password).sendKeys("tester123!");
+       driver.findElement(password).sendKeys(JSONManagement.readProperty("password"));
 
     }
     public void clickLogInButton ()  {
